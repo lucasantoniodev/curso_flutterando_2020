@@ -9,19 +9,27 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int counter = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Página inicial'),
-        actions: const [
-          CustomSwitch()
-        ],
+        actions: const [CustomSwitch()],
       ),
-      body: const Center(
-        child: Text('HI'),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Contador: $counter'),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () => setState(() => counter++),
       ),
     );
   }
 }
-
