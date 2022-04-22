@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando_2020/controller/app_controller.dart';
+import 'package:flutterando_2020/components/switch_dark_theme.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,18 +14,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Página inicial'),
+        actions: const [
+          CustomSwitch()
+        ],
       ),
-      body: Center(
-        child: AnimatedBuilder(
-          animation: AppController.instance,
-          builder: (_, __) => Switch(
-            value: AppController.instance.isDarkTheme,
-            onChanged: (bool value) {
-              AppController.instance.changeTheme();
-            },
-          ),
-        ),
+      body: const Center(
+        child: Text('HI'),
       ),
     );
   }
 }
+
