@@ -19,30 +19,21 @@ class _HomePageState extends State<HomePage> {
         actions: const [CustomSwitch()],
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          // scrollDirection: Axis.horizontal,
           children: [
             Text('Contador: $counter'),
             const Text('Olá'),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-              Container(
-                height: 50,
-                width: 50,
-                color: Colors.black
-              ),
-              Container(
-                height: 50,
-                width: 50,
-                color: Colors.green
-              ),
-              Container(
-                height: 50,
-                width: 50,
-                color: Colors.blue
-              ),
-            ],)
+                Container(height: 500, width: 50, color: Colors.black),
+                Container(height: 100, width: 50, color: Colors.green),
+                Container(height: 200, width: 50, color: Colors.blue),
+              ],
+            ),
+            Text('Contador: $counter'),
+            Container(height: 200, width: 50, color: Colors.blue),
           ],
         ),
       ),
