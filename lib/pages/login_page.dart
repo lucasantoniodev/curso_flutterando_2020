@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando_2020/pages/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -27,29 +26,49 @@ class _LoginPageState extends State<LoginPage> {
                 height: 200,
                 width: 200,
               ),
-              TextField(
-                onChanged: (String value) => email = value.toLowerCase(),
-                keyboardType: TextInputType.emailAddress,
-                decoration: const InputDecoration(
-                    labelText: 'Email', border: OutlineInputBorder()),
-              ),
-              const SizedBox(height: 10),
-              TextField(
-                onChanged: (String value) => password = value,
-                obscureText: true,
-                decoration: const InputDecoration(
-                    labelText: 'Password', border: OutlineInputBorder()),
-              ),
-              const SizedBox(height: 15),
-              ElevatedButton(
-                onPressed: () {
-                  if (email == 'admin@admin.com' && password == 'admin') {
-                    Navigator.pushReplacementNamed(context, '/home');
-                  } else {
-                    print('Login e senha errado');
-                  }
-                },
-                child: const Text('Entrar'),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    children: [
+                      TextField(
+                        onChanged: (String value) =>
+                            email = value.toLowerCase(),
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: const InputDecoration(
+                            labelText: 'Email', border: OutlineInputBorder()),
+                      ),
+                      const SizedBox(height: 10),
+                      TextField(
+                        onChanged: (String value) => password = value,
+                        obscureText: true,
+                        decoration: const InputDecoration(
+                            labelText: 'Password',
+                            border: OutlineInputBorder()),
+                      ),
+                      const SizedBox(height: 15),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.red,
+                        ),
+                        onPressed: () {
+                          if (email == 'admin@admin.com' &&
+                              password == 'admin') {
+                            Navigator.pushReplacementNamed(context, '/home');
+                          } else {
+                            debugPrint('Login e senha errado');
+                          }
+                        },
+                        child: const SizedBox(
+                            width: double.infinity,
+                            child: Text(
+                              'Entrar',
+                              textAlign: TextAlign.center,
+                            )),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
