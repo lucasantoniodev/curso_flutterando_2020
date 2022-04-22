@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutterando_2020/components/switch_dark_theme.dart';
 
@@ -14,6 +16,32 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            const UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                child: Icon(Icons.person),
+                backgroundColor: Colors.black12,
+              ),
+              accountName: Text('Teco'),
+              accountEmail: Text('admin@admin.com'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text('Início'),
+              subtitle: const Text('Tela de início'),
+              onTap: () => print('Salve'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: const Text('Sair'),
+              subtitle: const Text('Finalizar sessão'),
+              onTap: () => Navigator.pushReplacementNamed(context, '/'),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: const Text('Página inicial'),
         actions: const [CustomSwitch()],

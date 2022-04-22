@@ -23,6 +23,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Image.asset(
                 'assets/images/logo.png',
+                color: Colors.white,
                 height: 200,
                 width: 200,
               ),
@@ -84,6 +85,7 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
             child: Image.asset(
               'assets/images/background.jpg',
               fit: BoxFit.cover,
