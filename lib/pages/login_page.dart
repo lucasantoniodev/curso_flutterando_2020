@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterando_2020/pages/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -40,7 +41,12 @@ class _LoginPageState extends State<LoginPage> {
                 ElevatedButton(
                   onPressed: () {
                     if (email == 'admin@admin.com' && password == 'admin') {
-                      print('Entrando');
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (contex) => const HomePage(),
+                        ),
+                      );
                     } else {
                       print('Login e senha errado');
                     }
