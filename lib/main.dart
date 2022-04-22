@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterando_2020/controller/app_controller.dart';
 import 'package:flutterando_2020/pages/home_page.dart';
+import 'package:flutterando_2020/pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
               ? Brightness.dark
               : Brightness.light,
         ),
-        home: const HomePage(),
+        home: const LoginPage(),
       ),
     );
   }
