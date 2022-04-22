@@ -24,6 +24,11 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Image.network(
+                  'https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-1.png',
+                  height: 200,
+                  width: 200,
+                ),
                 TextField(
                   onChanged: (String value) => email = value.toLowerCase(),
                   keyboardType: TextInputType.emailAddress,

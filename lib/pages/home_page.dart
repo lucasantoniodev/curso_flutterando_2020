@@ -28,7 +28,9 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: () => setState(() => counter++),
+        onPressed: () => setState(() {
+          counter++;
+        }),
       ),
     );
   }
