@@ -19,13 +19,14 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(
         child: Column(
           children: [
-            const UserAccountsDrawerHeader(
-              currentAccountPicture: CircleAvatar(
-                child: Icon(Icons.person),
-                backgroundColor: Colors.black12,
+            UserAccountsDrawerHeader(
+              currentAccountPicture: ClipRRect(
+                borderRadius: BorderRadius.circular(40),
+                child: Image.network(
+                    'https://www.petmag.com.br/app/uploads/petteca/famosos/8857/tico-e-teco-01-840x630.jpg'),
               ),
-              accountName: Text('Teco'),
-              accountEmail: Text('admin@admin.com'),
+              accountName: const Text('Teco'),
+              accountEmail: const Text('admin@admin.com'),
             ),
             ListTile(
               leading: const Icon(Icons.home),
