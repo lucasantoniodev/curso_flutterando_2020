@@ -41,12 +41,7 @@ class _LoginPageState extends State<LoginPage> {
                 ElevatedButton(
                   onPressed: () {
                     if (email == 'admin@admin.com' && password == 'admin') {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (contex) => const HomePage(),
-                        ),
-                      );
+                      Navigator.pushReplacementNamed(context, '/home');
                     } else {
                       print('Login e senha errado');
                     }
